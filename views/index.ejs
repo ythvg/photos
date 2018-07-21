@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <a href="/upload">upload image</a>
+    <h1><%= title %></h1>
+    <div id="photos">
+      <% photos.forEach(function(photo){ %>
+        <div class="photo">
+          <a href="/download/<%=photo.id%>">
+            <h2><%=photo.name%></h2>
+            <img src='/photos/<%=photo.path%>' />
+          </a>
+        </div>
+      <% }); %>
+    </div>
+  </body>
+</html>
